@@ -1,0 +1,18 @@
+
+  <div class="navbar">
+
+    <div class="title">
+      Movie Reviews
+    </div>
+
+    <div class="topnav">
+      <a *ngIf='(currentUser | async) else loginlink' class="item" routerLinkActive='active' routerLink="/logout">{{currentUser|async}}</a>
+      <ng-template #loginlink>
+        <a class="item" routerLinkActive='active' routerLink="/login">log in</a>
+      </ng-template>
+      <a routerLink="/add-movie">Add Movie</a>
+      <a routerLink="/my-movie">My Movies</a>
+      <a routerLink="/movie-list">Home</a>
+    </div>
+
+  </div>

@@ -1,0 +1,34 @@
+<div *ngIf='errorMsg' class="ui error message">{{errorMsg}}</div>
+<form [formGroup]='user' (ngSubmit)='onSubmit()' class="entirePage">
+  <h1 class="ui header">register new user</h1>
+  <div class="field">
+    <label for="username">username:</label>
+    <input type="text" id="username" formControlName='username'  data-test=username>
+    <div *ngIf=' user.get("username").errors?.required && user.get("username").touched'>
+      a username is required
+    </div>
+    <div *ngIf='user.get("username").errors?.minlength && user.get("username").touched'>
+      the username should be at least {{user.get("username").errors?.minlength.requiredLength }} letters
+    </div>
+    <div *ngIf='user.get("username").errors?.userAlreadyExists && user.get("username").touched'>
+      a user with that name already exists
+    </div>
+  </div>
+  <div formGroupName='passwordGroup'>
+    <div class="field">
+      <label for="password">password:</label>
+      <input type="password" id="password" formControlName='password' data-test=password>
+      <div *ngIf=' passwordControl.errors?.passwordTooShort && passwordControl.touched'>
+        password too short, please use at least {{passwordControl.errors?.passwordTooShort.requiredLength}} letters (got {{passwordControl.errors?.passwordTooShort.actualLength}})
+      </div>
+    </div>
+    <div class="field">
+      <label for="confirmpassword">confirm password:</label>
+      <input type="password" id="confirmpassword" formControlName='confirmPassword' data-test=confirmPassword>
+    </div>
+    <div *ngIf=' user.get("passwordGroup").errors?.passwordsDiffer && user.get("passwordGroup").get("confirmPassword").touched  && user.get("passwordGroup").get("password").touched'>
+      the two passwords should be the same
+    </div>
+  </div>
+  <button type='submit' data-test=register>register</button>
+</form>

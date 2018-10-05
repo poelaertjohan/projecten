@@ -1,0 +1,33 @@
+* {
+    background-color: #778899;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #E8E8E8;
+    height: 10vh;
+}
+
+.title {
+    text-align: center;
+    color: lightgray;
+    font-size: 3vw;
+    padding-top: 2vh;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    margin-top: -50px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    color: #E8E8E8;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}

@@ -1,0 +1,22 @@
+﻿
+<script src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.js"></script>
+<script src="~/js/confetti.js"></script>
+
+@{
+    ViewData["Title"] = "SessieAfgelopen";
+}
+
+
+<br />
+
+<div class="jumbotron alert-success">
+    <h2>@ViewBag.score</h2>
+</div>
+
+<div id="confetti" style="height: 100%;
+	left: 0px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1;"></div>

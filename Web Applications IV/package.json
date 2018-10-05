@@ -1,0 +1,37 @@
+{
+    "name": "movieapp",
+    "version": "1.0.0",
+    "description": "Recipe demo app",
+    "homepage": "http://www.github.com/pieter-hogent/",
+    "scripts": {
+        "start": "node server",
+        "deploy-backend": "git subtree push --prefix backend movieappbackend master",
+        "build-frontend": "cd frontend && ng build --prod",
+        "commit-build-changes": "git add . && git commit -m 'build files'",
+        "deploy-frontend": "npm run build-frontend && npm run copy && npm run commit-build-changes && git subtree push --prefix serve-frontend movieappfrontend master",
+        "copy": "cpx 'frontend/dist/**' serve-frontend/www"
+    },
+    "author": {
+        "name": "Pieter Van Der Helst",
+        "email": "pieter.vanderhelst@hogent.be",
+        "web": "http://www.github.com/pieter-hogent/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/pieter-hogent/webapps/"
+    },
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "dependencies": {
+        "angular-cli": "^1.0.0-beta.28.3",
+        "connect": "^3.6.5",
+        "copyfiles": "^2.0.0",
+        "cpx": "^1.5.0",
+        "cypress": "^3.1.0",
+        "express": "^4.16.3",
+        "serve-static": "^1.13.1"
+    },
+    "license": "MIT",
+    "devDependencies": {}
+}

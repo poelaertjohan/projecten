@@ -1,0 +1,22 @@
+.entirePage {
+    background-color: #E8E8E8;
+    height: 100vh;
+}
+
+.deleteButton, .editButton {
+  float: right;
+  margin-top: 10px;
+}
+
+.deleteButton {
+  margin-right: 11%;
+}
+
+.editButton {
+  margin-right: 1%;
+}
+
+.filling {
+  background-color: #E8E8E8;
+  height: 80px;
+}

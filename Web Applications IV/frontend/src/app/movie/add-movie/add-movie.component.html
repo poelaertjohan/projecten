@@ -1,0 +1,63 @@
+<form class="entirePage" [formGroup]='movie' (ngSubmit)='onSubmit()'>
+  <div class="main">
+
+    <div class="data">
+      <h1>Add Movie</h1>
+      <div class="left">
+        
+        <label>Title:</label>
+        <input type="text" name="title" formControlName='title' data-test=movieTitle placeholder="Title" #spy>
+        <br>
+        <label>Rated:</label>
+        <input type="text" name="rated" formControlName='rated' data-test=movieRated placeholder="Rating">
+        <br>
+        <label>Release date:</label>
+        <input type="date" name="released" formControlName='released' data-test=movieReleased placeholder="Date the movie first came out">
+        <br>
+        <label>Runtime in minutes:</label>
+        <input type="text" name="runtime" formControlName='runtime' data-test=movieRuntime placeholder="Movie runtime in minutes">
+        <br>
+        <label>Genres:</label>
+        <input type="text" name="genres" formControlName='genres' data-test=movieGenres placeholder="Different genres seperated with a comma">
+        <br>
+        <label>Director:</label>
+        <input type="text" name="director" formControlName='director' data-test=movieDirector placeholder="Movie director">
+        <br>
+        <label>Actors:</label>
+      <input type="text" name="actors" formControlName='actors' data-test=movieActors placeholder="Actors seperated with a comma">
+        <br>
+        <label>Opinion:</label>
+        <textarea name="text" cols="40" rows="5" formControlName='opinion' data-test=movieReview placeholder="Review of at least 5 characters"></textarea>
+      </div>
+
+      <div class="right">
+        <br>
+        <label>Plot:</label>
+        <textarea name="text" cols="40" rows="5" formControlName='plot' data-test=moviePlot placeholder="Plot of at least 20 characters"></textarea>
+        <br>
+        <label>Languages:</label>
+        <input type="text" name="languages" formControlName='languages' data-test=movieLanguages placeholder="Languages spoken in the movie">
+        <br>
+        <label>Country:</label>
+        <input type="text" name="country" formControlName='country' data-test=movieCountry placeholder="Countries where the movie was shot">
+        <br>
+        <label>Awards:</label>
+        <input type="text" name="awards" formControlName='awards' data-test=movieAwards placeholder="Awards won by movie">
+        <br>
+        <label>Link to image:</label>
+        <input type="text" name="poster" formControlName='poster' data-test=moviePoster placeholder="Link to movie poster (Imgur, Google, ...)">
+        <br>
+        <label>Rating:</label>
+        <input type="text" name="rating" formControlName='rating' data-test=movieRating placeholder="Give the movie a score on 10">
+        <br>
+        <label>ImdbId:</label>
+        <input type="text" name="imdbid" formControlName='imdbid' data-test=movieImdbId placeholder="IMDB id">
+        <br>
+        <label>Type:</label>
+        <input type="text" name="type" formControlName='type' data-test=movieType placeholder="movie or series">
+        <br>
+      </div>
+    </div>
+    <button type='submit' data-test=movieSubmit>Save</button>
+  </div>
+</form>

@@ -1,0 +1,11 @@
+<div class="entirePage">
+  <div *ngIf='errorMsg' class="ui error message">{{errorMsg}}</div>
+
+  <div class="filling"></div>
+  <div class="ui segment basic">
+    <div class="cards" *ngFor="let movie of movies|myMoviesFilter:filterMovie">
+      <img class="deleteButton" src="https://i.imgur.com/06yqgkk.png" (click)="deleteMovie(movie)" alt="Delete" width="3%" style="cursor: pointer;">
+      <app-movie class="movie" [movie]="movie"></app-movie>
+    </div>
+  </div>
+</div>

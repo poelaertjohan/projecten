@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView fx:id="listActies" layoutX="40.0" layoutY="162.0" prefHeight="366.0" prefWidth="544.0" />
+      <Label alignment="CENTER" layoutX="-4.0" layoutY="-5.0" prefHeight="106.0" prefWidth="1211.0" style="-fx-background-color: #3b5998;" text="ACTIES" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="50.0" />
+         </font>
+      </Label>
+      <HBox layoutX="-1.0" layoutY="602.0" prefHeight="94.0" prefWidth="1202.0" style="-fx-background-color: #dfe3ee;">
+         <children>
+            <Button fx:id="annuleren" mnemonicParsing="false" onAction="#annuleren" prefHeight="56.0" prefWidth="562.0" style="-fx-background-color: #3b5998;" text="TERUG NAAR MENU" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0492ff" />
+               </effect>
+            </Button>
+            <Button fx:id="btnOpslaan" mnemonicParsing="false" onAction="#opslaan" prefHeight="56.0" prefWidth="562.0" style="-fx-background-color: #3b5998;" text="OPSLAAN" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#0492ff" />
+               </effect>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="41.0" layoutY="132.0" prefHeight="26.0" prefWidth="287.0" text="BESTAANDE ACTIES:" textFill="#8b9dc3">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnToevoegen" layoutX="620.0" layoutY="297.0" mnemonicParsing="false" onAction="#toevoegen" prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: white;" text="VOEG TOE" textFill="#3b5998">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#0492ff" />
+         </effect>
+      </Button>
+      <Button fx:id="btnVerwijderen" alignment="CENTER" contentDisplay="RIGHT" layoutX="42.0" layoutY="538.0" mnemonicParsing="false" onAction="#verwijderen" prefHeight="47.0" prefWidth="163.0" style="-fx-background-color: white;" text="VERWIJDER" textAlignment="RIGHT" textFill="#3b5998">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#0492ff" />
+         </effect>
+      </Button>
+      <Label fx:id="opgaveTitel" layoutX="620.0" layoutY="132.0" style="-fx-color: #8b9dc3;" text="NIEUWE ACTIE: " textFill="#8b9dc3">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="opgave" alignment="TOP_LEFT" layoutX="620.0" layoutY="162.0" onKeyTyped="#aanpassen" prefHeight="126.0" prefWidth="547.0" />
+      <Line endY="320.0" layoutX="608.0" layoutY="262.0" startY="-130.0" AnchorPane.rightAnchor="597.0" />
+   </children>
+</fx:root>

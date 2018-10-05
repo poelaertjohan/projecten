@@ -1,0 +1,28 @@
+﻿@model BreakOutBox.Models.ViewModels.SessieIndexViewModel
+
+    <h2 style="margin-top:3%" class="text-center">Welkom bij Breakoutbox!</h2>
+    <br />
+
+
+    <div class="jumbotron" style=" margin-top:3%">
+        <form class="text-center" asp-action="Index" asp-controller="Sessie" method="post">
+
+            <div class=form-group>
+                <br />
+                <br />
+                <h3>Geef de sessiecode hier in om te beginnen: </h3>
+                <br />
+                <input style="width:70%; margin-top:10px" asp-for="Code" class="form-control center-block" placeholder="">
+
+            </div>
+
+            <div>
+
+                <button style="width:15%; height:10%" class="btn btn-primary" type="submit">Valideer</button>
+            </div>
+            <br />
+            <br />
+
+        </form>
+    </div>
+

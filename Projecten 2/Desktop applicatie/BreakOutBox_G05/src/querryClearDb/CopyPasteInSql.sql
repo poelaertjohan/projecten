@@ -1,0 +1,15 @@
+DROP TABLE BreakOutBoxDb.dbo.Box_oef
+DROP TABLE BreakOutBoxDb.dbo.Box_TOEGANGSCODES
+DROP TABLE BreakOutBoxDb.dbo.Box_Acties
+DROP TABLE BreakOutBoxDb.dbo.Oef_Gbw
+DROP TABLE BreakOutBoxDb.dbo.Sessie_Groep
+DROP TABLE BreakOutBoxDb.dbo.ACTIE
+DROP TABLE BreakOutBoxDb.dbo.Groep_oef
+DROP TABLE BreakOutBoxDb.dbo.SEQUENCE
+DROP TABLE BreakOutBoxDb.dbo.MERGEALL
+DROP TABLE BreakOutBoxDb.dbo.GROEPSBEWERKING
+DROP TABLE BreakOutBoxDb.dbo.GROEP
+DROP TABLE BreakOutBoxDb.dbo.OEFENING
+DROP TABLE BreakOutBoxDb.dbo.DOELSTELLING
+DROP TABLE BreakOutBoxDb.dbo.SESSIE
+DROP TABLE BreakOutBoxDb.dbo.BOX

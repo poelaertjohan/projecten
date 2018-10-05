@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<fx:root id="AnchorPane" maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #f7f7f7;" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="27.0" layoutY="159.0" prefHeight="430.0" prefWidth="548.0">
+         <children>
+            <Label fx:id="naamTitel" text="NAAM" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txfNaam" onKeyTyped="#aanpassen" prefHeight="26.0" prefWidth="478.0" />
+            <Label text="OMSCHRIJVING" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="6.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txfOmschrijving" alignment="TOP_LEFT" onKeyTyped="#aanpassen" prefHeight="74.0" prefWidth="548.0" />
+            <HBox prefHeight="269.0" prefWidth="548.0">
+               <children>
+                  <VBox prefHeight="269.0" prefWidth="627.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="502.0" text="ALLE ACTIES (selecteer de gewenste)" textFill="#8b9dc3">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="listAlleActies" prefHeight="226.0" prefWidth="548.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="-10.0" layoutY="-5.0" prefHeight="128.0" prefWidth="1214.0" style="-fx-background-color: #3b5998;" text="BOX- TOEVOEGEN" textFill="WHITE">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <HBox layoutX="5.0" layoutY="700.0" prefHeight="30.0" prefWidth="1210.0" style="-fx-background-color: #3b5998;">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="1221.0" text="GROEP 5" textFill="WHITE" />
+         </children>
+      </HBox>
+      <HBox layoutX="-6.0" layoutY="604.0" prefHeight="94.0" prefWidth="1210.0" style="-fx-background-color: #dfe3ee;">
+         <children>
+            <Button fx:id="btnannuleren" mnemonicParsing="false" onAction="#annuleer" prefHeight="56.0" prefWidth="562.0" style="-fx-background-color: #3b5998;" text="TERUG" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOpslaan" mnemonicParsing="false" onAction="#opslaan" prefHeight="56.0" prefWidth="562.0" style="-fx-background-color: #3b5998;" text="OPSLAAN" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="596.0" layoutY="176.0" prefHeight="410.0" prefWidth="544.0">
+         <children>
+            <VBox prefHeight="312.0" prefWidth="230.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="502.0" text="ALLE OEFENINGEN" textFill="#8b9dc3">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="listAlleOefeningen" prefHeight="366.0" prefWidth="230.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="410.0" prefWidth="40.0">
+               <children>
+                  <Line endY="410.0" stroke="#3b5998">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Line>
+               </children>
+            </VBox>
+            <VBox prefHeight="312.0" prefWidth="273.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="222.0" text="BESTAANDE BOXEN" textFill="#8b9dc3">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="listBox" prefHeight="366.0" prefWidth="248.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></ListView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</fx:root>

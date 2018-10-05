@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BreakOutBox.Models.Sessie>
+
+<h2 style="margin-top:3%" class="text-center"> Welkom in het beheerscherm.</h2>
+<br />
+
+<section>
+    <div class="container">
+        <div class="row">
+            <a asp-action="Index" asp-controller="Beheer" method="get" class="btn btn-primary" style="float:right;margin-bottom : 10px">Refresh</a>
+
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div style="margin: 20px; height: 200px;">
+                           
+                                <h2 class="card-title"> @item.Naam</h2>
+                                <h4> Boxnaam: @item.BoxNaam</h4>
+                                <h4> Sessiecode: @item.Code</h4>
+                                <hr>
+                                <div class="row">
+                                    <div style="margin:3px" class="col-12 col-md-2">
+                                        <form asp-action="Index" asp-controller="Beheer" asp-route-sessiecode=@item.Code method="post">
+                                            <button class="btn btn-primary">Details</button>
+                                        </form>
+                                    </div>
+                                    <div style="margin:3px" class="col-12 col-md-2">
+                                        <form asp-action="ChangeAllFreezeStatus" asp-controller="Beheer" asp-route-sessiecode=@item.Code asp-route-freeze="true" method="post">
+                                            <button class="btn btn-primary">Bevries alle groepen</button>
+                                        </form>
+                                    </div>
+                                    <div style="margin:3px" class="col-12 col-md-2">
+                                        <form asp-action="ChangeAllFreezeStatus" asp-controller="Beheer" asp-route-sessiecode=@item.Code asp-route-freeze="false" method="post">
+                                            <button class="btn btn-primary">Ontvries alle groepen</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            
+
+                        </div>
+                        <hr style="color:black" />
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,48 @@
+﻿@model BreakOutBox.Models.ViewModels.OefeningIndexViewModel
+
+<br />
+<div style="float:right; border:solid black 1px; padding:3px 5px">@Model.GroepId</div><br>
+<br />
+
+<h2 class="text-center">Los de volgende oefening op.</h2>
+<br />
+
+
+@{
+    //timeleft
+    var DateStart = DateTime.Now;
+}
+
+<form asp-action="Index" asp-controller="Oefening" method="post">
+    <div class="form-group jumbotron">
+
+
+        <!--<img src="~/Data/afbeeldingen/afbeeldingPdf.PNG" />-->
+        <p>Oefening : @Model.Naam</p>
+        <p asp-for="Opgave">Opgave : @Model.Opgave</p>
+        <div>
+            
+            <embed src="~/pdf/@Model.Pdfpad" width="500" height="375" type='application/pdf'>
+        </div>
+        <p>Bewerking uit te voeren op antwoord : @Model.GroepsBewerkingOperator  @Model.GroepsBewerkingGetal</p>
+        <input asp-for="Antwoord" class="form-control" placeholder="">
+        <div style="display: none">
+            <input asp-for="DateStart" class="form-control" placeholder="">
+        </div>
+        <div style="margin-top: 2%">
+            <button class="btn btn-primary">Dien in</button>
+        </div>
+    </div>
+   
+
+    <div >
+        <p> @TempData["feedback"]</p>
+    </div>
+
+</form>
+
+<div class="container" style="position: absolute; margin-bottom: 5% ">
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:@Model.Percentage%"></div>
+    </div>
+</div>

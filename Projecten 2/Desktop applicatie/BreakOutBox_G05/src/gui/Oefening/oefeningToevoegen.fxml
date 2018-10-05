@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <VBox layoutX="17.0" layoutY="149.0" prefHeight="430.0" prefWidth="563.0">
+         <children>
+              <Label fx:id="lblNaam" text="NAAM" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+              <TextField fx:id="txfNaam" onKeyTyped="#Aangepast" prefHeight="26.0" prefWidth="478.0" />
+              <Label fx:id="lblOpgave" prefHeight="26.0" prefWidth="502.0" text="OPGAVE: (zelf ingeven of .PDF-bestand selecteren hieronder)" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="6.0" />
+               </VBox.margin>
+            </Label>
+              <TextField fx:id="txfOpgave" onKeyTyped="#Aangepast" prefHeight="58.0" prefWidth="563.0" />
+            <Label fx:id="lblPdf" text="PDF BESTAND" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="6.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="btnPdf" mnemonicParsing="false" onAction="#pdfToevoegen" prefHeight="38.0" prefWidth="110.0" style="-fx-background-color: #3b5998;" text="Bladeren..." textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+              <Label fx:id="lblFeedback" text="FEEDBACK" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="6.0" />
+               </VBox.margin>
+            </Label>
+              <TextField fx:id="txfFeedback" onKeyTyped="#Aangepast" prefHeight="135.0" prefWidth="563.0" />
+              <Label fx:id="lblAntwoord" text="ANTWOORD" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+              <TextField fx:id="txfAntwoord" onKeyTyped="#Aangepast">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextField>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="-2.0" layoutY="-2.0" prefHeight="118.0" prefWidth="1214.0" style="-fx-background-color: #3b5998;" text="OEFENINGEN - TOEVOEGEN" textFill="WHITE">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <HBox layoutX="-5.0" layoutY="690.0" prefHeight="30.0" prefWidth="1210.0" style="-fx-background-color: #3b5998;">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="1247.0" text="GROEP 5" textFill="WHITE" />
+         </children>
+      </HBox>
+      <HBox layoutX="-5.0" layoutY="594.0" prefHeight="94.0" prefWidth="1210.0" style="-fx-background-color: #dfe3ee;">
+         <children>
+            <Button fx:id="btnannuleren" mnemonicParsing="false" onAction="#annuleer" prefHeight="56.0" prefWidth="562.0" style="-fx-background-color: #3b5998;" text="TERUG NAAR MENU" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOpslaan" mnemonicParsing="false" onAction="#opslaan" prefHeight="56.0" prefWidth="562.0" style="-fx-background-color: #3b5998;" text="OPSLAAN" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="620.0" layoutY="150.0" prefHeight="437.0" prefWidth="280.0">
+         <children>
+            <Label fx:id="lblVak" text="VAK" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txfVak" onKeyTyped="#Aangepast" />
+            <Label text="DOELSTELLINGEN (selecteer)" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listDoelstellingen" prefHeight="200.0" prefWidth="200.0" />
+            <Label fx:id="lblTijd" prefHeight="26.0" prefWidth="118.0" text="Tijd in minuten" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txfTimeLeft" onKeyTyped="#Aangepast" promptText="Laat leeg voor geen tijd" />
+            <Label prefHeight="26.0" prefWidth="502.0" text="GROEPSBEWERKINGEN (selecteer)" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listGroepsbewerkingen" prefHeight="200.0" prefWidth="200.0" />
+            <Label layoutX="10.0" layoutY="281.0" prefHeight="26.0" prefWidth="502.0" text="GROEPSBEWERKINGEN (selecteer)" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="933.0" layoutY="148.0" prefHeight="430.0" prefWidth="252.0">
+         <children>
+            <Label text="REEDS BESTAANDE OEF" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listBestaandeOefeningen" prefHeight="408.0" prefWidth="252.0" />
+         </children>
+      </VBox>
+      <Line endY="310.0" layoutX="916.0" layoutY="273.0" startY="-130.0" stroke="#3b5998" />
+    </children>
+</fx:root>

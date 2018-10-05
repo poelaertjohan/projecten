@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<fx:root id="AnchorPane" focusTraversable="true" maxHeight="738.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="728.0" prefWidth="1200.0" style="-fx-background-color: #f7f7f7;" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="23.0" layoutY="139.0" prefHeight="442.0" prefWidth="562.0">
+         <children>
+            <Label fx:id="lblNaam" text="NAAM" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txfNaam" onKeyTyped="#Aangepast" prefHeight="26.0" prefWidth="478.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></TextField>
+            <Label text="OMSCHRIJVING" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txfOmschrijving" alignment="TOP_LEFT" onKeyTyped="#Aangepast" prefHeight="93.0" prefWidth="338.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></TextField>
+            <Label fx:id="lblDate" text="BESCHIKBAAR VANAF:" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </Label>
+            <DatePicker fx:id="beschikbaarVan" onMouseClicked="#Aangepast" prefHeight="26.0" prefWidth="192.0" style="-fx-background-color: #3b5998;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></DatePicker>
+            <Label fx:id="lblLeerlingen" text="Leerlingen" textFill="#8b9dc3">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="btnExcel" mnemonicParsing="false" onAction="#leesExcel" prefHeight="42.0" prefWidth="193.0" style="-fx-background-color: white; -fx-border-color: #8b9dc3;" text="EXCEL INLEZEN">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <CheckBox fx:id="chkAfstandsonderwijs" mnemonicParsing="false" onMouseClicked="#Aangepast" text="AFSTANDSONDERWIJS" textFill="#8b9dc3">
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font></CheckBox>
+         </children>
+         <padding>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+         </padding>
+      </VBox>
+      <Label alignment="CENTER" layoutX="-10.0" layoutY="-5.0" prefHeight="128.0" prefWidth="1214.0" style="-fx-background-color: #3b5998;" text="SESSIE - AANMAKEN" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <HBox layoutX="5.0" layoutY="700.0" prefHeight="30.0" prefWidth="1210.0" style="-fx-background-color: #3b5998;">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="1221.0" text="GROEP 5" textFill="WHITE" />
+         </children>
+      </HBox>
+      <HBox layoutX="-6.0" layoutY="604.0" prefHeight="94.0" prefWidth="1210.0" style="-fx-background-color: #dfe3ee;">
+         <children>
+            <Button fx:id="btnannuleren" mnemonicParsing="false" onAction="#annuleren" prefHeight="56.0" prefWidth="562.0" style="-fx-background-color: #3b5998;" text="TERUG NAAR MENU" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnOpslaan" mnemonicParsing="false" onAction="#opslaan" prefHeight="56.0" prefWidth="562.0" style="-fx-background-color: #3b5998;" text="OPSLAAN" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="585.0" layoutY="136.0" prefHeight="458.0" prefWidth="514.0">
+         <children>
+            <VBox prefHeight="346.0" prefWidth="233.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="502.0" text="BOX SELECTEREN " textFill="#8b9dc3">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="listBox" prefHeight="410.0" prefWidth="227.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ListView>
+               </children>
+               <HBox.margin>
+                  <Insets top="12.0" />
+               </HBox.margin>
+            </VBox>
+            <Line scaleZ="0.5" startY="440.0" stroke="#3b5998">
+               <HBox.margin>
+                  <Insets bottom="6.0" left="20.0" right="6.0" top="6.0" />
+               </HBox.margin>
+            </Line>
+            <VBox prefHeight="429.0" prefWidth="222.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="502.0" text="REEDS BESTAANDE SESSIES" textFill="#8b9dc3">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="bestaandeSessie" prefHeight="409.0" prefWidth="258.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ListView>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</fx:root>

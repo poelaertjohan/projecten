@@ -1,0 +1,13 @@
+<div class="entirePage">
+  <div *ngIf='errorMsg' class="ui error message">{{errorMsg}}</div>
+
+  <div class="ui input">
+    <input type="text" placeholder="Search movie" (keyup)="filterMovie$.next($event.target.value)">
+  </div>
+
+  <div class="ui segment basic">
+    <div class="ui cards">
+      <app-movie *ngFor="let movie of movies|movieFilter:filterMovieTitle" [movie]="movie"></app-movie>
+    </div>
+  </div>
+</div>

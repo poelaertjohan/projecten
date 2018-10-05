@@ -1,0 +1,25 @@
+﻿@model BreakOutBox.Models.ViewModels.ActieViewModel;
+
+<h2 style="margin-top:3%">Proficiat, dat was het juiste antwoord. </h2>
+<hr />
+<h3>Ga nu op zoek naar de juiste toegangscode:</h3>
+
+<div class="jumbotron text-center">
+
+    <h2>@Model.Naam</h2>
+
+    <form asp-action="CorrectAntwoord" asp-controller="Oefening" method="post">
+        <div class=form-group>
+            <h3 asp-for="ToegangsCode">Gevonden Toegangscode : </h3>
+            <input  style="width:70%; margin-top:10px" asp-for="ToegangsCode"  class="form-control center-block" placeholder="">
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">Dien in</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+

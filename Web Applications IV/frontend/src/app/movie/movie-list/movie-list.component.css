@@ -1,0 +1,19 @@
+.entirePage {
+    background-color: #E8E8E8;
+    height: 100vh;
+  }
+
+input {
+    margin: 20px;
+    margin-left: 10%;
+    width: 28%;
+    border: none;
+    margin-top: 40px;
+    background-color: #E8E8E8;
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+::placeholder {
+    color: black;
+}
